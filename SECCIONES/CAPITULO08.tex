@@ -1,0 +1,153 @@
+\chapter{Anexos}
+En este capítulo se incluye información adicional el cual complementa el presente trabajo.
+\section{Código fuente}
+Se muestran las partes del código más relevantes.
+\subsection{Conexión a la base de datos}
+\label{anexo:conexiondb}
+La conexión a la base de datos Firebird 1.5 a través del JDBC brindada por Firebird llamada Jaybird. Se hace uso de librerías propias de Java, ver figura \ref{codigo:conexiondb}.
+\lstinputlisting[caption={Conexión a Firebird en Kotlin.}, label={codigo:conexiondb}, language=Kotlin, firstline=8, lastline=37]{CODIGO/conexion_bd.kt}
+\subsection{Broadcast Receiver}
+\label{codigo:broadcast}
+Su codificación en Kotlin es simple, se deben de tener creadas las interfaces que servirán para la comunicación entre cada capa del MVC.
+\begin{enumerate}
+	\item Crear las interfaces para la Vista y el Presentador. El código \ref{codigo:InterfazViewBroadcast} presenta los métodos que implementará la vista.
+	
+	\lstinputlisting[caption={Interfaz BroadcastView.}, label={codigo:InterfazViewBroadcast}, language=Kotlin]{CODIGO/BroadcastView.kt}
+	
+	\lstinputlisting[caption={Interfaz BroadcastInteractorListener.}, label={codigo:InterfazPresenterBroadcast}, language=Kotlin]{CODIGO/BroadcastInteractorListener.kt}
+	
+	\item Crear la clase correspondiente a la Vista (será la encargada de manejar todas las cosas relacionadas con la interfaz de usuario, código \ref{codigo:BroadcastView}) y el presentador (enlace entre el modelo y la vista, código \ref{codigo:BroadcastPresenter}).
+	
+	\lstinputlisting[caption={Capa de la Vista:  BroadcastViewImpl.}, label={codigo:BroadcastView}, language=Kotlin]{CODIGO/BroadcastViewImpl.kt}
+	
+	Los métodos con el prefijo \textit{mostrar} deben de ser utilizados para realizar cambios en la interfaz de usuario y gracias a su desacoplamiento con la lógica de negocios los cambios en la UI (\textit{User Interface} por sus siglas en inglés) solo deben hacerse en esta capa.
+	
+	\lstinputlisting[caption={Capa del Presentador:  BroadcastPresenterImpl.}, label={codigo:BroadcastPresenter}, language=Kotlin]{CODIGO/BroadcastPresenterImpl.kt}
+	
+	\item Crear el modelo. Es usual encontrar en repositorios como GitHub ejemplos con el nombre de la clase más el sufijo \textbf{Interactor} por tanto se decide usar esta nomenclatura, código \ref{codigo:BroadcastInteractor}.
+	
+	\lstinputlisting[caption={Capa del Modelo:  BroadcastInteractor.}, label={codigo:BroadcastInteractor}, language=Kotlin]{CODIGO/BroadcastInteractor.kt}
+	
+	Para evitar tener varias instancias de la misma clase cada vez que se regitren cambios en el estado del Wi-Fi se opta por la implementación del patrón Singleton.
+	
+\end{enumerate}
+
+\subsection{Zxing}
+\label{codigo:zxing}
+EL lector de código de barras, código \ref{codigo:layout_zxing}, está implementado en un Fragment. El método \textit{onCreate} solo establece el layout personalizado a mostrar y el método \textit{onViewCreated} manipula los objetos necesarios cuando la vista ya ha sido creada.
+\lstinputlisting[caption={Layout personalizado para Zxing.}, label={codigo:layout_zxing}, language=Kotlin]{CODIGO/CodigoBarrasFragment.kt}
+
+\section{Impresiones Limón}
+Durante la estancia en Limón Almacenes S.A. de C.V. se desarrolló una aplicación independiente de la principal con sus mismas funcionalidades con la diferencia de la adición de un módulo de impresión de tiquets en una impresora Zebra, figura \ref{appsec}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Pantalla principal.]{
+		\label{appsec_principal}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_impresiones/pantalla_principal.png}
+	}
+	\subfloat[Detalles del artículo.]{
+		\label{appsec_detalles}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_impresiones/busqueda.png}
+	}
+	\subfloat[Menú del CardView.]{
+		\label{appsec_menu}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_impresiones/busqueda_menu.png}
+	}
+	\subfloat[Impresión de etiqueta.]{
+		\label{app_imprimir}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_impresiones/busqueda_imprimir.png}
+	}
+	\caption{Aplicación móvil: Impresiones Limón.}
+	\label{appsec}
+\end{figure}
+
+Para su desarrollo se utilizó una impresora Zebra modelo GK420T, esta impresora no dispone de conexión a la red por ningún medio (llámese por cableado físico o conexión inalámbrica). Esta situación planteó el análisis del proceso actual de impresión de tiquets en la sucursal descrito a continuación:
+
+\begin{enumerate}
+	\item Iniciar el programa 'Verificador de precios´, programado en Java.
+	\item Buscar el artículo por identificación.
+	\item Presionar tecla F8 en el host para impresión, seguido de ello el programa ejecuta un método el cual manda a imprimir la plantilla (realizada en JasperReports) de la etiqueta hacia la impresora que esté conectada mediante USB al host.
+	\item Impresión finalizada.
+	\item Fin de la ejecución
+\end{enumerate}
+
+Aprovechando esta herramienta, se dispuso a realizar una conexión entre la aplicación móvil y el 'Verificador de precios´ mediante la implementación de Sockets, de esta manera no se tiene que rehacer código y solo se debe de configurar la conexión entre el cliente (el cual manda los datos requeridos por el host para la impresión) y el servidor (recibe los datos enviados por el cliente y ejecuta la acción necesaria para imprimir). La representación gráfica de la conexión al servidor principal y al host de impresiones puede visualizarse en la figura \ref{red}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=.80\textwidth]{IMAGENES/red.png}
+	\caption{Estructura de la red.}
+	\label{red}
+\end{figure}
+
+\newpage
+\section{Formatos del programa de residencia profesional}
+La documentación que acredita el proceso administrativo de la presente obra se expone en este capítulo.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/SolicitudResidencias.png}
+	\caption{Solicitud de inscripción al programa de residencias profesionales.}
+	\label{oficio_solicitud}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/CartaPresentacion.png}
+	\caption{Carta de presentación emitida por el ITSTa.}
+	\label{oficio_cartapresentacion}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/CartaAceptacion.png}
+	\caption{Carta de aceptación emitida por Limón Almacenes.}
+	\label{oficio_cartaaceptacion}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/RegistroAsesoria01.png}
+	\caption{Primer formato de asesoría.}
+	\label{oficio_asesoria1}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/EvaluacionSeguimientoResidencia01.png}
+	\caption{Primer formato de evaluación de residencias.}
+	\label{oficio_evaluacion1}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/RegistroAsesoria02.png}
+	\caption{Segundo formato de asesoría.}
+	\label{oficio_asesoria2}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/EvaluacionSeguimientoResidencia02.png}
+	\caption{Segundo formato de evaluación de residencias.}
+	\label{oficio_evaluacion2}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/asesoria_final.jpg}
+	\caption{Tercer formato de asesoría.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/calificacion_final.jpg}
+	\caption{Tercer formato de evaluación de residencias.}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{IMAGENES/oficios/carta_liberacion.jpg}
+	\caption{Carta de liberación de Residencias Profesionales.}
+\end{figure}

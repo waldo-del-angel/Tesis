@@ -1,0 +1,564 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Adobe}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=71f698950c9cdadc3d19bb7411177a78}{%
+           family={Adobe},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{71f698950c9cdadc3d19bb7411177a78}
+      \strng{fullhash}{71f698950c9cdadc3d19bb7411177a78}
+      \strng{bibnamehash}{71f698950c9cdadc3d19bb7411177a78}
+      \strng{authorbibnamehash}{71f698950c9cdadc3d19bb7411177a78}
+      \strng{authornamehash}{71f698950c9cdadc3d19bb7411177a78}
+      \strng{authorfullhash}{71f698950c9cdadc3d19bb7411177a78}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Adobe XD CC}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.adobe.com/mx/products/xd.html
+      \endverb
+      \verb{url}
+      \verb https://www.adobe.com/mx/products/xd.html
+      \endverb
+    \endentry
+    \entry{Android}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{Android Studio}
+      \field{urlday}{26}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/studio/intro
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/studio/intro
+      \endverb
+    \endentry
+    \entry{Basamiq}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=aa99461d6545f8e885b4d55f4c8f22ef}{%
+           family={balsamiq},
+           familyi={b\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \strng{fullhash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \strng{bibnamehash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \strng{authorbibnamehash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \strng{authornamehash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \strng{authorfullhash}{aa99461d6545f8e885b4d55f4c8f22ef}
+      \field{sortinit}{b}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Quick and Easy Wireframing Tool}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://balsamiq.com/wireframes/
+      \endverb
+      \verb{url}
+      \verb https://balsamiq.com/wireframes/
+      \endverb
+    \endentry
+    \entry{Firebird}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=366ce3e08864b6f960e6fb9496fd514a}{%
+           family={Cantu},
+           familyi={C\bibinitperiod},
+           given={Carlos\bibnamedelima H},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{366ce3e08864b6f960e6fb9496fd514a}
+      \strng{fullhash}{366ce3e08864b6f960e6fb9496fd514a}
+      \strng{bibnamehash}{366ce3e08864b6f960e6fb9496fd514a}
+      \strng{authorbibnamehash}{366ce3e08864b6f960e6fb9496fd514a}
+      \strng{authornamehash}{366ce3e08864b6f960e6fb9496fd514a}
+      \strng{authorfullhash}{366ce3e08864b6f960e6fb9496fd514a}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Get to know Firebird in 2 minutes}}
+      \field{year}{2010}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oswal/Documents/RESIDENCIAS{\_}PROFESIONALES/referencias/Firebird{\_}2{\_}min.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://firebirdsql.org/file/documentation/papers{\_}presentations/Firebird{\_}2{\_}min.pdf
+      \endverb
+      \verb{url}
+      \verb https://firebirdsql.org/file/documentation/papers%7B%5C_%7Dpresentations/Firebird%7B%5C_%7D2%7B%5C_%7Dmin.pdf
+      \endverb
+    \endentry
+    \entry{PermisosGoogle}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=ee46292309d59259e69ff82edd151b48}{%
+           family={Developers},
+           familyi={D\bibinitperiod},
+           given={Google},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ee46292309d59259e69ff82edd151b48}
+      \strng{fullhash}{ee46292309d59259e69ff82edd151b48}
+      \strng{bibnamehash}{ee46292309d59259e69ff82edd151b48}
+      \strng{authorbibnamehash}{ee46292309d59259e69ff82edd151b48}
+      \strng{authornamehash}{ee46292309d59259e69ff82edd151b48}
+      \strng{authorfullhash}{ee46292309d59259e69ff82edd151b48}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Permisos del sistema}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://developer.android.com/guide/topics/security/permissions.html?hl=es-419
+      \endverb
+      \verb{url}
+      \verb https://developer.android.com/guide/topics/security/permissions.html?hl=es-419
+      \endverb
+    \endentry
+    \entry{Dia}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=3a438bdec724ad9b6f0bab71c804b40c}{%
+           family={Dia},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \strng{fullhash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \strng{bibnamehash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \strng{authorbibnamehash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \strng{authornamehash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \strng{authorfullhash}{3a438bdec724ad9b6f0bab71c804b40c}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Chapter 1. Introduction}
+      \field{urlday}{29}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://dia-installer.de/doc/en/intro-chapter.html
+      \endverb
+      \verb{url}
+      \verb http://dia-installer.de/doc/en/intro-chapter.html
+      \endverb
+    \endentry
+    \entry{Domus}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f5289e5be18280c1e2922f097343892d}{%
+           family={DomusNatura},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5289e5be18280c1e2922f097343892d}
+      \strng{fullhash}{f5289e5be18280c1e2922f097343892d}
+      \strng{bibnamehash}{f5289e5be18280c1e2922f097343892d}
+      \strng{authorbibnamehash}{f5289e5be18280c1e2922f097343892d}
+      \strng{authornamehash}{f5289e5be18280c1e2922f097343892d}
+      \strng{authorfullhash}{f5289e5be18280c1e2922f097343892d}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SCANPET}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://domusnaturaes.wordpress.com/scanpet/
+      \endverb
+      \verb{url}
+      \verb https://domusnaturaes.wordpress.com/scanpet/
+      \endverb
+    \endentry
+    \entry{Solutions2016}{online}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{EMS Database Management Solutions}
+      \field{urlday}{26}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://download2.sqlmanager.net/download/datasheets/ibfb/manager/en/ibmanager.pdf
+      \endverb
+      \verb{url}
+      \verb http://download2.sqlmanager.net/download/datasheets/ibfb/manager/en/ibmanager.pdf
+      \endverb
+    \endentry
+    \entry{Zxing}{online}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{Google Open Source}
+      \field{urlday}{27}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://opensource.google.com/projects/zxing
+      \endverb
+      \verb{url}
+      \verb https://opensource.google.com/projects/zxing
+      \endverb
+    \endentry
+    \entry{DocumentacionKotlin}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=b6a77f3f5bead76a495a90d63703e1f9}{%
+           family={JetBrains},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \strng{fullhash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \strng{bibnamehash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \strng{authorbibnamehash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \strng{authornamehash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \strng{authorfullhash}{b6a77f3f5bead76a495a90d63703e1f9}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Object Expressions and Declarations}
+      \field{urlday}{29}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://kotlinlang.org/docs/reference/object-declarations.html
+      \endverb
+      \verb{url}
+      \verb https://kotlinlang.org/docs/reference/object-declarations.html
+      \endverb
+    \endentry
+    \entry{Singleton}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=12cc26e171b03f621b819a88a298ea50}{%
+           family={Leiva},
+           familyi={L\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{fullhash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{bibnamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authorbibnamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authornamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authorfullhash}{12cc26e171b03f621b819a88a298ea50}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Patrones de diseño de software}
+      \field{urlday}{11}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://devexperto.com/patrones-de-diseno-software/
+      \endverb
+      \verb{url}
+      \verb https://devexperto.com/patrones-de-diseno-software/
+      \endverb
+    \endentry
+    \entry{MVP}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=12cc26e171b03f621b819a88a298ea50}{%
+           family={Leiva},
+           familyi={L\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{fullhash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{bibnamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authorbibnamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authornamehash}{12cc26e171b03f621b819a88a298ea50}
+      \strng{authorfullhash}{12cc26e171b03f621b819a88a298ea50}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{MVP for Android: how to organize the presentation layer}
+      \field{urlday}{11}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://antonioleiva.com/mvp-android/
+      \endverb
+      \verb{url}
+      \verb https://antonioleiva.com/mvp-android/
+      \endverb
+    \endentry
+    \entry{MaxMovil}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=d5b107aafec91bb492f73a4050506506}{%
+           family={MaxMovil},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5b107aafec91bb492f73a4050506506}
+      \strng{fullhash}{d5b107aafec91bb492f73a4050506506}
+      \strng{bibnamehash}{d5b107aafec91bb492f73a4050506506}
+      \strng{authorbibnamehash}{d5b107aafec91bb492f73a4050506506}
+      \strng{authornamehash}{d5b107aafec91bb492f73a4050506506}
+      \strng{authorfullhash}{d5b107aafec91bb492f73a4050506506}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cómo Escanear Códigos De Barra Con Android, Tigerscan PDA 4G}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.maxmovil.com/blog/pda/pda-android-4g-lector-codigos-barras/
+      \endverb
+      \verb{url}
+      \verb https://www.maxmovil.com/blog/pda/pda-android-4g-lector-codigos-barras/
+      \endverb
+    \endentry
+    \entry{PatronSingleton}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=5bb639c3fd1d2caa00796cedd6328c7b}{%
+           family={Morales},
+           familyi={M\bibinitperiod},
+           given={Italo},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \strng{fullhash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \strng{bibnamehash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \strng{authorbibnamehash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \strng{authornamehash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \strng{authorfullhash}{5bb639c3fd1d2caa00796cedd6328c7b}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Qué son y para qué sirven los patrones de diseño}
+      \field{urlday}{11}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://platzi.com/blog/patrones-de-diseno/
+      \endverb
+      \verb{url}
+      \verb https://platzi.com/blog/patrones-de-diseno/
+      \endverb
+    \endentry
+    \entry{Platzi}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labeltitlesource}{title}
+      \field{title}{Platzi}
+      \field{urlday}{26}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://platzi.com/blog/que-es-kotlin/
+      \endverb
+      \verb{url}
+      \verb https://platzi.com/blog/que-es-kotlin/
+      \endverb
+    \endentry
+    \entry{RadarPrice}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=8c1e6050bc2e6131e5193f7011bbbe39}{%
+           family={RadarPrice},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \strng{fullhash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \strng{bibnamehash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \strng{authorbibnamehash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \strng{authornamehash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \strng{authorfullhash}{8c1e6050bc2e6131e5193f7011bbbe39}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{RadarPrice, la APP que localiza lo que buscas al mejor precio}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.radarprice.com/es/
+      \endverb
+      \verb{url}
+      \verb https://www.radarprice.com/es/
+      \endverb
+    \endentry
+    \entry{Jaybird}{manual}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=58df1d4168e009e1a576a0bfdd25ef97}{%
+           family={Rokytskyy},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{organization}{1}{%
+        {Firebird Project}%
+      }
+      \strng{namehash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \strng{fullhash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \strng{bibnamehash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \strng{authorbibnamehash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \strng{authornamehash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \strng{authorfullhash}{58df1d4168e009e1a576a0bfdd25ef97}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{pagetotal}{103}
+      \field{title}{Jaybird 2.1 JDBC driver, Java Programmer's Manual}
+      \field{version}{Version 2.1}
+      \field{year}{2008}
+      \field{dateera}{ce}
+    \endentry
+    \entry{Techniweb}{misc}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=208c0467ae0dca769a21599c1ad9f8f4}{%
+           family={Techni-web},
+           familyi={T\bibinithyphendelim w\bibinitperiod}}}%
+      }
+      \strng{namehash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \strng{fullhash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \strng{bibnamehash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \strng{authorbibnamehash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \strng{authornamehash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \strng{authorfullhash}{208c0467ae0dca769a21599c1ad9f8f4}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Gesti{ó}n Techni-Web}}
+      \field{year}{2006}
+      \field{pages}{676}
+      \range{pages}{1}
+      \verb{file}
+      \verb :C$\backslash$:/Users/oswal/Documents/RESIDENCIAS{\_}PROFESIONALES/referencias/ayuda{\_}gestion.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.techni-web.es/wp-content/uploads/download/utilidades/ayuda/ayuda{\_}gestion.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.techni-web.es/wp-content/uploads/download/utilidades/ayuda/ayuda%7B%5C_%7Dgestion.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

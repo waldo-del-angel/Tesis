@@ -1,0 +1,290 @@
+\chapter{Desarrollo}
+En este capítulo se exponen detalladamente los procedimientos realizados para la resolución de cada uno de los objetivos específicos.
+
+\section{Procedimiento y descripción de las actividades realizadas}
+
+\subsection{Requerimientos}
+Se presentan los criterios a cumplir por el software.
+\subsubsection{Requerimientos funcionales}
+Los requerimientos funcionales expresan la naturaleza del funcionamiento del sistema, en otras palabras define qué debe de hacer el sistema.
+
+A continuación se enlistan los puntos a tomar en consideración para el desarrollo del sistema.
+
+\begin{enumerate}
+	\item El cliente debe ser capaz de consultar los detalles de cualquier producto del catálogo de la tienda.
+		\begin{enumerate}
+			\item A través del código de barras del producto.
+			\item A través de la identificación (clave interna) del producto.
+			\item A travéz de la descripción propia del producto.
+		\end{enumerate}
+	\item El administrador debe ser capaz de imprimir el código de barras de un producto del catálogo de la tienda.
+\end{enumerate}
+
+\subsubsection{Requerimientos no funcionales}
+Los requerimientos no funcionales son las restricciones sobre el espacio del sistema o lo que es lo mismo define cómo debe ser el sistema.
+
+A continuación se enlistan los puntos a tomar en consideración para el desarrollo del sistema.
+
+\begin{enumerate}
+	%Fiabilidad, tiempo de respuesta, disponibilidad
+	\item El sistema debe ser eficiente en cuanto a codificación.
+	%Dispositivos de E/S, usabilidad, interoperabilidad.
+	\item La aplicación debe de conectarse a la red interna de la tienda.
+	%Estándares, herramientas, plazo de entrega.
+	\item La aplicación debe de usar Firebird como manejador de base de datos.
+	\item La aplicación debe de estar conectada al servidor de la sucursal.
+\end{enumerate}
+
+\subsection{Vista funcional}
+
+\subsubsection{Diagramas UML, Unified Model Language}
+International Bussiness Machine [IBM](n.d.) define un \textit{caso de uso} como un artefacto que establece una secuencia de acciones que da lugar a un resultado de valor observable y en caso de ser para un actor en particular será llamado \textit{caso de uso de sistema}.
+
+Se presenta para el modelado UML el caso de uso para la aplicación móvil representada en la figura \ref{caso_de_uso}, en el cual se muestran los actores y secuencias de acciones que están involucrados.
+
+\begin{figure}[h]
+	\centering
+	\input{CASO_DE_USO.tex}
+	\caption{Caso de uso de sistema de la aplicación móvil.}
+	\label{caso_de_uso}
+\end{figure}
+
+\subsection{Vista lógica}
+Se presenta el estilo arquitectónico y patrones de diseño que han sido aplicados al proyecto.
+
+El objetivo primordial de una arquitectura de software es garantizar la satisfacción de los atributos de calidad del software derivados de tales principios.
+
+Por otro lado, un patrón de diseño es una forma de dar solución a una problemática. \textcite{PatronSingleton} enlista los objetivos mínimos que debe cumplir un patrón:
+
+\begin{itemize}
+	\item Estandarizar el lenguaje entre programadores.
+	\item Evitar perder tiempo en soluciones a problemas ya resueltos o conocidos.
+	\item Crear código reusable (excelente ventaja).
+\end{itemize}
+
+\subsubsection{Modelo Vista Presentador}
+MVP es un patrón de arquitectura de software derivado del MVC, Modelo-Vista-Controlador, que permite separar la interfaz gráfica de la capa de negocios. El MVP se basa en tres capas primordiales:
+\begin{itemize}
+	\item Capa del Modelo: Datos de la aplicación, bases de datos.
+	\item Capa de la Vista: Interfaces gráficas de usuarios.
+	\item Capa del Presentador: Maneja la lógica, interactúa con los datos de la aplicación y la interfaz gráfica.
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[node distance=3cm,
+		every node/.style={rectangle, rounded corners, minimum width=4cm, minimum height=1cm},
+		vista/.style={fill=blue!60!white},
+		presentador/.style={fill=green!60!white},
+		modelo/.style={fill=red!60!white}]
+		
+		\node[vista](view){Vista};
+		\node[presentador, below of=view](presenter){Presentador};
+		\node[modelo, below of=presenter](model){Modelo};
+		
+		\draw[->] (view) -- node[fill=white, text width=4cm]
+		{Acciones del usuario}
+		(presenter);
+
+		\draw[->] (presenter) -- node[fill=white, text width=4cm]
+		{Actualizar modelo}
+		(model);
+
+		\path [draw, ->] (model.east) -- ++(1,0) -- ++(1,0) -- node[fill=white]{Cambios en el modelo} ++(0,2.8) -- ([yshift=-.20cm]presenter.east);
+
+		\path [draw, ->] ([yshift=.20cm]presenter.east) -- ++(1,0) -- ++(1,0) -- node[fill=white]{Actualizar UI} ++(0,2.8) -- (view.east);
+	\end{tikzpicture}
+	\caption{Estructura simple del MVP.}
+	\label{mvp}
+\end{figure}
+
+\textcite{MVP} refiere que MVP hace que las vistas sean independientes de la fuente de datos. Se divide la aplicación en al menos tres capas diferentes, figura \ref{mvp}, lo que permite probarlas de forma independiente.
+
+\subsubsection{Patrón Singleton}
+De acuerdo con \textcite{Singleton} es un patrón de diseño creacional, el cual facilita la tarea de creación de nuevos objetos. Singleton limita a uno el número de instancias posibles de una clase en el programa, y proporciona un acceso global al mismo.
+
+La usabilidad que se le da en el proyecto recae en la instancia a la base de datos ya que evita que se generen múltiples conexiones a la misma.
+
+\subsubsection{Modelo físico de datos}
+Se presenta en la figura \ref{er_articulo} una sección del modelo físico de base datos de Limón Almacenes S.A. de C.V. manipulada por la aplicación, estas entidades almacenan información relevante para el cumplimiento de los requerimientos del proyecto.
+
+\begin{figure}[h]
+	\centering
+	\input{ER_Articulo.tex}
+	\caption{Diagrama Entidad - Relación de las entidades utilizadas en el proyecto.}
+	\label{er_articulo}
+\end{figure}
+
+\subsection{Diseño de prototipos}
+\label{subsec:prototipos}
+El proceso de diseño es un punto importante en la elaboración de la aplicación ya que nos ayudará a estructurar de manera correcta los elementos que serán fundamentales para una buena experiencia y navegación de los usuarios.
+
+Tomando en consideración el punto anterior, se diseñaron los wireframes y mockups correspondientes del proyecto tomando en consideración los siguientes puntos:
+
+\begin{itemize}
+	\item Splash screen: Es una pantalla que se muestra al iniciar la aplicación y su duración está vinculada con la carga de la actividad principal.
+	\item Lector de código de barras: Pantalla en la que el usuario podrá buscar un artículo al escanear su código de barras.
+	\item Buscador en base al identificador: Pantalla en la que el usuario podrá realizar una búsqueda de un artículo en base a su indentificación.
+	\item Buscador en base a la descripción del producto: Pantalla en la que el usuario podrá realizar una búsqueda de un artículo en base a su descripción.
+	\item Lista de artículos: Pantalla en la que el usuario podrá visualizar una lista de artículos cuando la búsqueda se haya realizado por descripción.
+	\item Detalles del artículo: Pantalla que mostrará los detalles del artículo.
+	\item Servidor no disponible: Pantalla que desplegará un mensaje cuando el servidor no esté disponible al momento de utilizar la aplicación.
+	\item Artículo no disponible: Pantalla que desplegará un mensaje cuando la búsqueda de un artículo no se encuentre en la base de datos.
+	\item Permisos denegados: Pantalla que desplegará un mensaje cuando el usuario no haya concedido los permisos necesarios al dispositivo para el uso de la cámara.
+\end{itemize}
+
+\subsubsection{Wireframes}
+Un wireframe es una representación gráfica de baja calidad el cual da una visión global de la estructura visual de la aplicación.
+
+Se trabajó sobre los diseños mencionados en la sección \ref{subsec:prototipos} y se presentan los más relevantes en la figura \ref{wireframes}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Splash screen.]{
+		\label{pantalla_inicio}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/wireframes/01_pantalla_inicio.png}
+	}
+	\subfloat[Lector de código de barras.]{
+		\label{pantalla_codbarras}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/wireframes/02_pantalla_camara.png}
+	}
+	\subfloat[Búsqueda por identificación.]{
+		\label{pantalla_identificacion}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/wireframes/03_pantalla_identificacion.png}
+	}
+	\subfloat[Búsqueda por descripción.]{
+		\label{pantalla_descripcion}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/wireframes/04_pantalla_descripcion.png}
+	}
+	\caption{Wireframes de la aplicación.}
+	\label{wireframes}
+\end{figure}
+
+\subsubsection{Mockups}
+De forma breve, son diseños más elaborados de la estructura visual de la aplicación. Se presentan los respectivos mockups de la subsección anterior en la figura \ref{mockups}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Splash screen.]{
+		\label{pantalla_w_inicio}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/mockups/01_pantalla_splash.png}
+	}
+	\subfloat[Lector de código de barras.]{
+		\label{pantalla_w_codbarras}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/mockups/02_pantalla_barcode.png}
+	}
+	\subfloat[Búsqueda por identificación.]{
+		\label{pantalla_w_identificacion}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/mockups/03_pantalla_identificacion.png}
+	}
+	\subfloat[Búsqueda por descripción.]{
+		\label{pantalla_w_descripcion}
+		\includegraphics[width=0.25\textwidth]{/home/waldo/Documentos/Residencias/MaterialGrafico/mockups/04_pantalla_descripcion.png}
+	}
+	\caption{Mockups de la aplicación.}
+	\label{mockups}
+\end{figure}
+
+\subsection{Codificación}
+Es la fase en donde se implementa el código fuente. Se presentarán las partes más relevantes las cuales hacen que la aplicación sea correctamente funcional.
+
+\subsubsection{Procedimientos en SQL}
+Se realizaron procedimientos SQL en Firebird por 2 motivos:
+
+\begin{itemize}
+	\item Minimizar el número de líneas de código en Kotlin.
+	\item Salvaguardar los datos de la empresa.
+\end{itemize}
+
+Estos permiten realizar las búsquedas de un artículo en base a un criterio específico y una tarifa dada ya que Limón Almacenes S.A. de C.V. maneja diversas tarifas en cada una de sus sucursales.
+
+\begin{enumerate}
+	\item \textbf{Búsqueda por código de barras}.
+	Devuelve las distintas presentaciones del producto consultado, así como los detalles de cada uno de ellos.
+	\item \textbf{Búsqueda por identificación}.
+	Realiza la misma funcionalidad que el procedimiento anterior.
+	\item \textbf{Búsqueda por descripción}.
+	Devuelve una lista de coincidencias del producto consultado incluyendo el código de barras y el formato de cada uno de ellos.
+\end{enumerate}
+
+\subsubsection{Conexión a la base de datos}
+Gracias a la interoperabilidad de Java y Kotlin se puede hacer uso de las bibliotecas de conexión a bases de datos que integra Java.
+
+La declaración de \textit{objects} en Kotlin facilita la creación de clases con el patrón singleton, tal como lo se describe en la documentación oficial de Kotlin \parencite{DocumentacionKotlin}. El código generado puede verse en el anexo \ref{anexo:conexiondb}.
+
+\subsubsection{Broadcast Receiver}
+La aplicación debe de estar conectada a la red Wi-Fi de las distintas sucursales de Limón Almacenes S.A. de C.V., por lo tanto se debe monitorear constantemente el estado de la conexión a la red. Para ello se define un Broadcast Receiver para realizar dicha función.
+
+Hay dos formas de aplicar un broadcast: declarándolo en el archivo de manifiesto (de forma estática) o a través del código (dinamicamente).
+
+Al ser programado dinámicamente se tiene un mejor control de la tarea en segundo plano, al saber si se cuenta con conexión se puede realizar una conexión o reconexión a la base de datos y enviar mensajes más específicos en la interfaz de usuario.
+
+La representación en UML del Broadcast Receiver se da en la figura \ref{diagrama:broadcast} teniendo en cuenta el uso del MVC, el proceso de codificación se detalla en el anexo \ref{codigo:broadcast}.
+
+\begin{figure}[h]
+	\centering
+	\input{DIAGRAMAS/diagrama_de_clase_broadcast.tex}
+	\caption{Diagrama de clases del BroadcastReceiver.}
+	\label{diagrama:broadcast}
+\end{figure}
+
+\subsubsection{Tareas Asíncronas}
+
+Debido al uso de base de datos, las operaciones que deriven de esta tarea se deben ejecutar en un hilo diferente al hilo principal de la aplicación evitando bloquearlo mientras el usuario realiza una operación (consulta, inserción, actualización o eliminación de registros) en la base de datos.
+
+A continuación se presenta un algoritmo breve para poder buscar un artículo teniendo en cuenta el tipo de búsqueda y su ejecución en segundo plano.
+
+\begin{enumerate}
+	\item Realizar una búsqueda de un artículo, en la capa de la vista.
+	\item Mandar al presentador el tipo de búsqueda y el artículo a buscar (ya sea la descripción, código de barras o el identificador).
+	\item El presentador ejecuta la tarea asíncrona (el interactor) mandándole como parámetros lo recibido por la vista.
+	\item Mientras la tarea está en ejecución, mostrar un elemento de carga que simbolice la acción.
+	\item Al finalizar la búsqueda se debe ocultar el elemento de carga y mostrar el (los) resultado(s) al usuario.
+\end{enumerate}
+
+Una representación más detalla se da en la figura \ref{diagrama:busqueda_descripcion}, la acción de búsqueda es activada en un Fragment correspondiente a la capa de la vista, con ello la capa del modelo y el interactor entran en acción.
+
+\begin{figure}[!h]
+	\centering
+	\input{DIAGRAMAS/diagrama_de_secuencia_busqueda.tex}
+	\caption{Diagrama de secuencia de búsqueda de un artículo.}
+	\label{diagrama:busqueda_descripcion}
+\end{figure}
+
+\subsubsection{Escáner de código de barras}
+La parte central de la aplicación recae en este apartado, ya que las búsquedas se harán de primera instancia po código de barras haciendo uso de la cámara del dispositivo celular para la lectura de este.
+
+Se hace uso de la librería Zxing creada por Google propiedad de Alphabet Inc., de código abierto y con licencia Apache 2.0.
+
+Las vista del lector de código de barras se personaliza para ajustarla al Fragment implementado en la aplicación de tal forma que se vea como en la figura \ref{pantalla_w_codbarras}. Para más información acerca de esta librería dirigirse a https://opensource.google.com/projects/zxing.
+
+La codificación puede verse en el anexo \ref{codigo:zxing}
+
+\subsubsection{Permisos del sistema}
+
+Los desarrolladores de Google \parencite{PermisosGoogle} dan a conocer que Android ofrece funciones de seguridad precisas mediante un mecanismo de “permisos” que aplica restricciones en las operaciones específicas para que un proceso en particular pueda ser realizado. Una aplicación no tiene permisos asociados de manera predeterminada. Esto significa que no puede hacer nada que afecte negativamente la experiencia del usuario o los datos en el dispositivo. Para usar funciones protegidas del dispositivo, se debe incluir una etiqueta <uses-permission> en el manifiesto de tu app correspondiente al permiso solicitado.
+
+Los permisos están categorizados en niveles de protección, estos son \textbf{normales} y \textbf{riesgosos}. Los permisos normales usados por la aplicación son los que se describen a continuación:
+
+\begin{itemize}
+	\item \textit{INTERNET}: Permite realizar operaciones de red.
+	\item \textit{ACCESS\_NETWORK\_STATE}: Complemento del punto anterior.
+	\item \textit{ACCESS\_WIFI\_STATE}. Permite que las aplicaciones accedan a información sobre redes wifi.
+	\item \textit{VIBRATE}: Permite el acceso al vibrador.
+	\item \textit{FLASHLIGHT}: Permite el acceso al led flash del dispositivo.
+\end{itemize}
+
+Los permisos riesgosos utilizados son:
+
+\begin{itemize}
+	\item \textit{CAMERA}: Necesario para poder acceder a la cámara del dispositivo.
+\end{itemize}
+
+En la página de desarrolladores de Google se describe más a fondo sobre este tópico. 
+\subsubsection{Shared preferences}
+En la creación de la \textit{introducción a la aplicación} se muestra un Activity que contiene un ViewPager. Dicho Activity muestra un indicador indicando en qué parte de la introducción se encuentra el usuario.
+
+Esta introducción solo se muestra una vez al ejecutar por primera vez la aplicación en el dispositivo.
+
+\subsubsection{Otras librerías}
+Se utilizaron las librerías \textbf{Lottie} para la animación de la pantalla \textit{Permisos denegados} correspondientes al uso de la cámara, \textbf{Material View Pager Dots Indicator} para los \textit{dots} de la introducción a la aplicación, \textbf{Recycler View} en el despliegue de listas y \textbf{Card View} para mostrar tarjetas de información general de un artículo.

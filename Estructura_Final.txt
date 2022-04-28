@@ -1,0 +1,23 @@
+Introducción
+Generalidades
+    Nombre del sistema
+    Versión del sistema
+    Fecha de elaboración
+    Área donde fue elaborado
+    Objetivos
+        Objetivo general
+        Objetivos específicos
+
+Normas, políticas y procedimientos
+Implementación de las reglas de negocio
+Fundamentación de la tecnología utilizada
+Descripción de los actores del sistema
+Especificación de requisitos
+Vista funcional
+Vista lógica
+Modelo lógico de datos
+Modelo físico de datos
+Descripción detallada de los algoritmos
+Diseño de pantallas
+Diagrama de navegación del sistema
+Glosario de términos

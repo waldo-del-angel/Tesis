@@ -1,0 +1,11 @@
+\chapter*{Introducción}
+
+El presente trabajo describe de manera general el desarrollo de una aplicación móvil que permite realizar consultas del catálogo de productos de la empresa Limón Almacenes S.A. de C.V. orientada al consumidor.
+\\
+La búsqueda que puede realizar un consumidor puede ser por código de barras (utilizando la cámara del dispositivo), por identificación (asignada por la empresa) y descripción del artículo deseado. Dichas consultas se lograron gracias a la elaboración de procedimientos almacenados para la base de datos Firebird implementada en la empresa.
+\\ \\
+La conexión con la base de datos fue posible gracias a una librería llamada Firebird escrita en Java y el desarrollo de la aplicación fue escrita en Kotlin, interoperable con Java, utilizando un patrón de arquitectura llamado Modelo - Vista - Presentador y el patrón creacional Singletón.
+\\ \\
+El monitoreo de la conectividad de conexión Wi Fi del dispositivo móvil es de gran importancia ya que está ligada a la conexión a la base de datos, por ende se implementó un Broadcast Receiver para atacar el problema. Estas tareas deben ejecutarse en hilos diferentes para no bloquear el hilo principal de la aplicación y no interferir con la navegación del usuario, por ende se hizo uso de tareas asíncronas las cuales permiten el uso de hilos en Android.
+\\ \\
+Se utilizaron otras librerías como ZXing para el escáner de código de barras a través de las cámaras de los dispositivos móviles y Lottie para las animaciones de la aplicación.

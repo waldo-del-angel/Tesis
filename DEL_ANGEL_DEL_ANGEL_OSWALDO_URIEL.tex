@@ -1,0 +1,115 @@
+% Tamaño de la página:
+% 	* letterpaper (Carta)
+% 	* Dimensiones de 8.5in x 11in
+% Tamaño de la fuente: 12pt
+\documentclass[letterpaper,12pt,onside,openany]{book}
+
+
+% ------------------------------------------------
+% Definición del idioma
+% ------------------------------------------------
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+% ------------------------------------------------
+
+% ------------------------------------------------
+% Definición de listings
+% ------------------------------------------------
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+
+% ------------------------------------------------
+% Referencias con base en la Norma APA.
+% ------------------------------------------------
+\usepackage{csquotes}
+\usepackage[style=apa]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{SECCIONES/REFERENCIAS.bib}
+% ------------------------------------------------
+
+
+% ------------------------------------------------
+% Definición de graphicx para usar includegraphics
+% ------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subfig}
+% ------------------------------------------------
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+
+% ------------------------------------------------
+% Definición de los márgenes
+% ------------------------------------------------
+\usepackage[left=2.54cm,top=2.54cm,right=2.54cm,bottom=2.54cm]{geometry}
+% ------------------------------------------------
+
+
+\usepackage{chngcntr}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+
+% ------------------------------------------------
+% Tablas y figuras en formato APA
+% ------------------------------------------------
+\usepackage{multirow,booktabs,setspace,caption}
+\usepackage{tikz}
+\DeclareCaptionLabelSeparator*{spaced}{\\[0.5ex]}
+\captionsetup[table]{textfont=it,format=plain,justification=justified,singlelinecheck=false,labelsep=spaced,skip=0pt}
+\captionsetup[figure]{labelsep=period,labelfont=it,justification=justified, singlelinecheck=false,font=doublespacing}
+% ------------------------------------------------
+\usetikzlibrary{er,positioning}
+% ------------------------------------------------
+
+% CONFIGURACION DE LISTINGS PARA KOTLIN
+
+\lstset{
+	basicstyle=\scriptsize\sffamily\color{black},
+	frame=single,
+	numbers=left,
+	numbersep=5pt,
+	numberstyle=\tiny\color{gray},
+	showspaces=false,
+	showstringspaces=false,
+	tabsize=1,
+	captionpos=b
+}
+
+\lstdefinelanguage{Kotlin}{
+	comment=[l]{//},
+	commentstyle={\color{gray}\ttfamily},
+	emph={delegate, filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println, return@},
+	emphstyle={\color{OrangeRed}},
+	identifierstyle=\color{black},
+	keywords={lateinit, abstract, actual, as, as?, break, by, open, class, companion, continue, data, do, dynamic, else, enum, expect, false, final, for, fun, get, if, import, in, interface, internal, is, null, object, override, package, private, public, return, set, super, suspend, this, throw, true, try,catch, typealias, val, var, vararg, when, where, while},
+	keywordstyle={\color{NavyBlue}\bfseries},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+	morestring=[s]{"""*}{*"""},
+	ndkeywords={@Deprecated, @JvmField, @JvmName, @JvmOverloads, @JvmStatic, @JvmSynthetic, @Synchronized, Array, Byte, Double, Float, Int, Integer, Iterable, Long, Runnable, Short, String},
+	ndkeywordstyle={\color{BurntOrange}\bfseries},
+	sensitive=true,
+	stringstyle={\color{ForestGreen}\ttfamily},
+}
+
+\begin{document}
+	\include{SECCIONES/01_PORTADA}
+	\include{SECCIONES/AGRADECIMIENTOS}
+	\include{SECCIONES/RESUMEN}
+	% Activar si se desea cambiar el titulo del indice general
+	% \renewcommand{\contentsname}{Contenido}
+	\renewcommand{\lstlistingname}{Código}
+	\tableofcontents
+	\listoffigures
+	\include{SECCIONES/INTRODUCCION}
+	\include{SECCIONES/CAPITULO01}
+	\include{SECCIONES/CAPITULO02}
+	\include{SECCIONES/CAPITULO03}
+	\include{SECCIONES/CAPITULO04}
+	\include{SECCIONES/CAPITULO05}
+	\include{SECCIONES/CAPITULO06}
+	\include{SECCIONES/CAPITULO07}
+	\include{SECCIONES/CAPITULO08}
+\end{document}

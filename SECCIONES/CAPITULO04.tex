@@ -1,0 +1,228 @@
+\chapter{Resultados}
+
+En este apartado se presentarán de manera gráfica (cuadros, tablas, gráficas, estadísticas, etc.) los resultados obtenidos derivados del desarrollo de la aplicación móvil realizado durante el periodo de residencia.
+
+Así mismo se realizará el análisis de los resultados obtenidos, el cual consiste en dar una explicación detallada de los resultados gráficos que se están presentando.
+
+\section{Exposición de los resultados}
+\label{seccion:exposicion_resultados}
+
+Llevar a la implementación los diseños gráficos, y la lógica del negocio, de una aplicación requieren de comprender su correcta implementación en el lenguaje de programación elegido para conseguir una versión lo más cercana posible de su representación gráfica.
+
+A continuación se presentan las pantallas de cada situación en la que el usuario final puede desenvolverse a través de la aplicación móvil.
+
+\subsection{Casos deseables}
+Se muestran los casos idóneos de los resultados esperados al manipular la aplicación móvil.
+
+\subsubsection{Introducción a la aplicación}
+La incorporación de una introducción es una experiencia virtual de unboxing (acción de abrir un paquete o caja para extraer cuidadosamente lo que contiene, en este caso una aplicación móvil) que ayuda a los usuarios a comenzar con una aplicación, figura \ref{onboarding}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Primer beneficio.]{
+		\label{funcionalidad1}
+		\includegraphics[width=0.33\textwidth]{IMAGENES/onboarding/intro01.png}
+	}
+	\subfloat[Segundo beneficio.]{
+		\label{funcionalidad2}
+		\includegraphics[width=0.33\textwidth]{IMAGENES/onboarding/intro02.png}
+	}
+	\subfloat[Tercer beneficio.]{
+		\label{funcionalidad3}
+		\includegraphics[width=0.33\textwidth]{IMAGENES/onboarding/intro03.png}
+	}
+	\caption{Onboarding de la aplicación.}
+	\label{onboarding}
+\end{figure}
+
+\subsubsection{Concesión de permisos}
+
+La funcionalidad de escáner depende de la cámara del dispositivo móvil, para ello se debe de solicitar su uso al usuario ya que entra en el rango de permisos riesgosos, figura \ref{exito_permisos_camara}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Solicitud de uso de la cámara.]{
+		\label{exito_permisos_camara_1}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/0.png}
+	}
+	\subfloat[Permiso concedido.]{
+		\label{exito_permisos_camara_2}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/17.png}
+	}
+	\caption{Permisos de la cámara.}
+	\label{exito_permisos_camara}
+\end{figure}
+
+\subsubsection{Conexión a la red Wi - Fi}
+La conexión a la red Wi - Fi es monitoreada cada vez que se detecta un cambio en ella, cada cambio (conexión y desconexión de la red) es notificado al usuario mediante un Toast, figura \ref{exito_toast_wifi}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Conectado a la red Wi - Fi.]{
+		\label{exito_toast_wifi_1}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/15.png}
+	}
+	\subfloat[Sin conexión de red.]{
+		\label{exito_toast_wifi_2}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/13.png}
+	}
+	\caption{Notificación de los cambios en la red Wi - Fi.}
+	\label{exito_toast_wifi}
+\end{figure}
+
+\subsubsection{Navegación en la pantalla principal}
+La pantalla principal está conformada por un menú de opciones en la que el usuario puede elegir qué tipo de búsqueda desea realizar, este elemento es llamado Bottom Navigation Bar (o barra de navegación inferior). Sobre de ella se localiza un FrameLayout que es actualizado conforme el usuario interactúa con la barra de navegación, figura \ref{exito_framelayout}.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[FrameLayout sin ningún elemento.]{
+		\label{exito_framelayout_vacio}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_main/18.png}
+	}
+	\subfloat[Fragment del lector de código de barras sobre el FrameLayout.]{
+		\label{exito_framelayout_escaner}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_main/6.png}
+	}
+	\subfloat[Fragment de búsqueda por identificación sobre el FrameLayout.]{
+		\label{exito_framelayout_identificacion}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_main/7.png}
+	}
+	\subfloat[Fragment de búsqueda por descripción sobre el FrameLayout.]{
+		\label{exito_framelayout_descripcion}
+		\includegraphics[width=0.25\textwidth]{IMAGENES/app_main/19.png}
+	}
+	\caption{Pantalla principal con diferentes vistas en el FrameLayout.}
+	\label{exito_framelayout}
+\end{figure}
+
+\subsubsection{Búsqueda de un artículo}
+
+\begin{itemize}
+	\item \textbf{Búsqueda por código de barras}. Cada Fragment de la barra de navegación se especializa en una búsqueda en partícular. La primer búsqueda es realizada mediante el código de barras de un artículo, el usuario solo debe colocar el código del producto frente a la cámara del dispositivo (figura \ref{exito_escaner_codigo}), la aplicación hace la búsqueda y muestra el resultado (figura \ref{exito_escaner_resultado}). \\
+
+		\begin{figure}[!h]
+			\centering
+			\subfloat[Escáner de código de barras.]{
+				\label{exito_escaner_codigo}
+				\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/escaner1.png}
+			}
+			\subfloat[Resultado del escaneo.]{
+				\label{exito_escaner_resultado}
+				\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/escaner_resultado.png}
+			}
+			\caption{Búsqueda de un artículo por código de barras.}
+			\label{exito_escaner}
+		\end{figure}
+	
+	\item \textbf{Búsqueda por identificación}. El mismo proceso se da cuando la búsqueda es realizada con la identificación del artículo, se provee al usuario de un EditText en el que puede escribir con el teclado la búsqueda a realizar y un botón para accionar dicho evento (dentro del teclado también se provee de un botón de búsqueda).\\
+
+		\begin{figure}[!h]
+			\centering
+			\subfloat[Elementos EditText y Button para la búsqueda.]{
+				\label{exito_busqueda_id}
+				\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/busqueda_id.png}
+			}
+			\subfloat[Botón de búsqueda en el teclado.]{
+				\label{exito_busqueda_id_resultado}
+				\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/busqueda_id_teclado.png}
+			}
+			\caption{Búsqueda de un artículo por identificación.}
+			\label{exito_busquedaid}
+		\end{figure}
+
+	\item \textbf{Búsqueda por descripción}. Por último, la búsqueda por descripción sigue el mismo proceso que la búsqueda por identificación: escribir el texto a buscar y posterior se procede a realizar la acción bien con el botón propio del diseño o con el botón del teclado, solo que aquí se encuentra un intermediario para poder mostrar un listado de coincidencias de la búsqueda con la que el usuario podrá elegir el producto deseado, figura \ref{exito_busqueda_desc}.\\
+	
+		\begin{figure}[!h]
+			\centering
+			\subfloat[Descripción del artículo.]{
+				\label{exito_busqueda_desc1}
+				\includegraphics[width=0.33\textwidth]{IMAGENES/app_main/busqueda_descripcion1.png}
+			}
+			\subfloat[Lista de coincidencias.]{
+				\label{exito_busqueda_desc2}
+				\includegraphics[width=0.33\textwidth]{IMAGENES/app_main/busqueda_descripcion2.png}
+			}
+			\subfloat[Detalles del artículo.]{
+				\label{exito_busqueda_desc3}
+				\includegraphics[width=0.33\textwidth]{IMAGENES/app_main/busqueda_descripcion3.png}
+			}
+			\caption{Búsqueda de un artículo por descripción.}
+			\label{exito_busqueda_desc}
+		\end{figure}
+\end{itemize}
+
+\subsection{Casos no deseables}
+Se muestran los casos en los que las acciones del usuario o factores externos podrían llevar a un resultado no esperado en la aplicación móvil.
+
+\subsubsection{Conexión no disponible}
+Cuando la conexión a la red Wi - Fi no esté disponible al momento de hacer uso de la aplicación, se notifica de la situación inmediatamente al usuario, figura \ref{exito_toast_wifi_2}.
+
+\subsubsection{Concesión de permisos denegado}
+El usuario podría denegar los permisos de uso de la cámara del dispositivo móvil por diferentes razones, para lo cual se debe de presentar en el FragmentLayout una vista que indique dicha acción (figura \ref{fracaso_permiso_denegado}) acompañado de un botón en la que pueda dirigirse a la configuración de la aplicación y conceder permisos de forma manual.
+Cada vez que se vuelva a hacer uso de la funcionalidad de escáner se muestra un mensaje que justifica la concesión de permisos (figura \ref{fracaso_permiso_confirmacion}) y posterior a ello se vuelven a solicitar.
+
+\begin{figure}[!h]
+	\centering
+	\subfloat[Pantalla de permisos insuficientes]{
+		\label{fracaso_permiso_denegado}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/permiso_denegado.png}
+	}
+	\subfloat[Mensaje de justificación.]{
+		\label{fracaso_permiso_confirmacion}
+		\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/permiso_confirmacion.png}
+	}
+	\caption{Permisos denegados.}
+	\label{fracaso_permiso}
+\end{figure}
+
+\subsubsection{Sin conexión a la base de datos}
+El tener una conexión activa a la red no asegura que la conexión a la base de datos de Limón Almacenes S.A. de C.V. haya sido satisfactoria. Por esta razón cada vez que se requiera realizar una acción que implique alguna operación a la base de datos y esta falle, se notifica al usuario mediante una pantalla que despliega el mensaje siguiente `Servidor no disponible', figura \ref{fracaso_servidor_nodisponible}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/server_no_disponible.png}
+	\caption{Servidor no disponible.}
+	\label{fracaso_servidor_nodisponible}
+\end{figure}
+
+\subsubsection{Artículo no encontrado}
+Si el artículo buscado no se encontrase, se debe de presentar esta causa al usuario final, véase figura \ref{fracaso_articulo_noencontrado}. Esta situación puede darse en cualquier búsqueda.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.50\textwidth]{IMAGENES/app_main/producto_no_encontrado.png}
+	\caption{Artículo no encontrado.}
+	\label{fracaso_articulo_noencontrado}
+\end{figure}
+
+\section{Análisis de los resultados}
+Se presenta un análisis del punto \ref{seccion:exposicion_resultados} en la tabla \ref{tabla_analisis}, con expliciones detalladas de cada situación dada.
+
+De acuerdo a los resultados obtenidos se concluye que los objetivos de la aplicación se cumplieron en su totalidad.
+\begin{table}
+	\caption{Análisis de los resultados en la aplicación.}
+	\centering
+	\begin{tabular}{p{5cm} p{5cm} p{6cm}}
+		\hline
+		Acción & Circunstancia & Resolución \\
+		\hline
+		\multirow{3}{5cm}{Ejecutar aplicación.} & Inicio por primera vez. & Si inició por primera vez, mostrar introducción a la aplicación, sino mostrar pantalla principal. \\
+		& Conexión a la red Wi - Fi. & Informar al usuario de la situación actual durante todo el ciclo de vida de la aplicación. \\
+		& Conexión a la base de datos. & Verificar si hay conectividad Wi - Fi, si la hay se debe realizar la conexión, de lo contrario no realizarla. \\
+		
+		\hline
+		\multirow{4}{5cm}{Buscar un artículo.} & Artículo encontrado. & Mostrar un elemento de carga (Spinner) y después presentar los detalles del producto. \\
+		& Artículo no encontrado. & Mostrar un elemento de carga (Spinner) y después presentar una pantalla que explique al usuario la causa de la situación: conexión a la base de datos no disponible o no existe conectividad Wi - Fi. \\
+		& No existe conectividad Wi - Fi & Mostrar un elemento de carga (Spinner) y después presentar una pantalla  que exponga al usuario la inactividad en la red Wi - Fi. \\
+		& Conexión a la base de datos no disponible & Mostrar un elemento de carga (Spinner) y después presentar una pantalla  que exponga al usuario la conexión actual a la base de datos. \\
+		
+		\hline
+		\multirow{2}{5cm}{Conceder permisos de uso de la cámara.} & Permiso concedido. & Actualizar el FragmentLayout y mostrar el Fragment del lector de código de barras. \\
+		& Permiso denegado. & Actualizar el FragmentLayout y mostrar el Fragment Sin permisos suficientes. \\
+		
+		\hline
+		Seleccionar formato de un artículo & Elegir un Chip contenido en el Chipgroup de los detalles de un artículo. & Actualizar la vista de detalles de artículo con los nuevos datos del formato seleccionado. \\
+		\hline
+	\end{tabular}
+	\label{tabla_analisis}
+\end{table}
